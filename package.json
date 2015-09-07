@@ -21,5 +21,11 @@
   "bugs": {
     "url": "https://github.com/domTombola/Noughts-and-Crosses/issues"
   },
-  "homepage": "https://github.com/domTombola/Noughts-and-Crosses"
+  "homepage": "https://github.com/domTombola/Noughts-and-Crosses",
+  "dependencies": {
+    "grunt": "~0.4.5"
+  },
+  "devDependencies": {
+    "bower": "~1.5.2"
+  }
 }
