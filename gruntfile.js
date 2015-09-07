@@ -13,6 +13,6 @@
         grunt.loadNpmTasks('grunt-lesslint');
         grunt.loadNpmTasks('grunt-contrib-less');
         grunt.registerTask('lessFiles', ['lesslint', 'less']);
-        grunt.registerTask('default', ['copy', lessFiles]);
+        grunt.registerTask('default', ['copy', 'lessFiles']);
     };
 })();
