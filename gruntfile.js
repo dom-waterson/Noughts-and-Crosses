@@ -15,6 +15,18 @@
                     src: ['main-app/app/sounds/*.*'],
                     dest: '.build/',
                     expand: true
+                },
+                mainapphtml: {
+                    cwd:'',
+                    src: ['main-app/app/*.*'],
+                    dest: '.build/',
+                    expand: true
+                },
+                mainappbower: {
+                    cwd:'',
+                    src: ['bower_components/**/*.*'],
+                    dest: '.build/thirdparty/',
+                    expand: true
                 }
             }
         });
