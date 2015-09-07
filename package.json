@@ -1,0 +1,25 @@
+{
+  "name": "Noughts-and-Crosses",
+  "version": "0.0.0",
+  "description": "Simple angular client app that consumes a game api",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://domTombola@github.com/domTombola/Noughts-and-Crosses.git"
+  },
+  "keywords": [
+    "angular",
+    "less-css",
+    "html",
+    "api"
+  ],
+  "author": "Dom Waterson",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/domTombola/Noughts-and-Crosses/issues"
+  },
+  "homepage": "https://github.com/domTombola/Noughts-and-Crosses"
+}
