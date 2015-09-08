@@ -1,10 +1,6 @@
 (function() {
     'use strict';
     module.exports = {
-        //checkless: {
-        //    src: ["main-app/app/less/**/*.less"]
-        //},
-
         convertless: {
             expand: true,
             cwd: 'main-app/app/less/',
