@@ -1,14 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="Tombola.NoughtAndCrosses.Core">
 <head>
     <meta charset="UTF-8">
     <title></title>
+    <script src="../../bower_components/angular/angular.min.js"></script>
+    <script src="scripts/temp.js"></script>
 </head>
-<body>
-    <img src="images/Michael-Komarck-Knife-of-Dreams.jpg" alt="wheel of time image">
-    <audio controls loop>
-        <source src="sounds/Silly_Farts-Joe-1473367952.mp3" type="audio/mp3">
-        <h1>hello</h1>
-    </audio>
+<body ng-controller="MainController">
+    <h1>{{textMessage}}</h1>
+    <input type="text" ng-model="textMessage"/>
 </body>
 </html>
