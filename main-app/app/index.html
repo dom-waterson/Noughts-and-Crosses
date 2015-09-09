@@ -7,7 +7,25 @@
     <script src="scripts/temp.js"></script>
 </head>
 <body ng-controller="MainController">
-    <h1>{{textMessage}}</h1>
-    <input type="text" ng-model="textMessage"/>
+    <section>
+        <h1>Player1 : {{player1}}</h1>
+        <h1>Player2 : {{player2}}</h1>
+        <select ng-model="player1">
+            <option value="human">Human</option>
+            <option value="random">Random Computer</option>
+            <option value="pre-trained">Pre-trained Computer</option>
+        </select>
+        <select ng-model="player2">
+            <option value="human">Human</option>
+            <option value="random">Random Computer</option>
+            <option value="pre-trained">Pre-trained Computer</option>
+        </select>
+    </section>
+    <section>
+        <!--<canvas id="myCanvas" width="500" height="500" style="border:1px solid #000000;">-->
+
+        <!--</canvas>-->
+        <div ng-show="player1 == 'human' && player2 == 'human'">Humans selected</div>
+    </section>
 </body>
 </html>

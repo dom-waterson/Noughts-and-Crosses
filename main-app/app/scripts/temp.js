@@ -2,6 +2,8 @@
     'use strict';
     angular.module('Tombola.NoughtAndCrosses.Core', [])
         .controller('MainController', function ($scope){
-            $scope.textMessage = 'Hello World';
+            $scope.player1 = '';
+            $scope.player2 = '';
+            $scope.gameboard = '000000000';
         });
 })();
