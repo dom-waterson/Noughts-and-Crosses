@@ -1,1 +1,1 @@
-alert("Hello world dom");
+alert("Hello world");

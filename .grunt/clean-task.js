@@ -12,6 +12,9 @@
         },
         sounds: {
             src: '.build/main-app/app/sounds/'
+        },
+        html: {
+            src: '.build/main-app/app/index.html'
         }
     };
 })();

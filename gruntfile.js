@@ -26,6 +26,7 @@
         grunt.loadNpmTasks('grunt-contrib-concat');
         grunt.registerTask('lessFiles', ['lesslint', 'clean:css', 'less']);
         grunt.registerTask('jsFiles', ['jshint', 'clean:javascript', 'concat' ]);
+        grunt.registerTask('htmlFiles', ['clean:html', 'copy:mainapphtml']);
         grunt.registerTask('default', ['copy', 'lessFiles', 'jsFiles', 'watch']);
     };
 })();

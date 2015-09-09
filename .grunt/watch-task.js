@@ -8,6 +8,10 @@
         javascript: {
             files: ['main-app/app/scripts/*.js'],
             tasks: ['jsFiles']
+        },
+        html: {
+            files: ['main-app/app/index.html'],
+            tasks: ['htmlFiles']
         }
     };
 })();
