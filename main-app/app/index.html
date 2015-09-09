@@ -21,11 +21,25 @@
             <option value="pre-trained">Pre-trained Computer</option>
         </select>
     </section>
-    <section>
-        <!--<canvas id="myCanvas" width="500" height="500" style="border:1px solid #000000;">-->
-
-        <!--</canvas>-->
-        <div ng-show="player1 == 'human' && player2 == 'human'">Humans selected</div>
+    <section ng-show="player1 == 'human' && player2 == 'human'">
+        <table id="gameboard" style="border:1px solid black;">
+            <tr>
+                <td ng-click="gameboardTapped(0)">efefefefe</td>
+                <td ng-click="gameboardTapped(1)">efefefefe</td>
+                <td ng-click="gameboardTapped(2)">efefefefe</td>
+            </tr>
+            <tr>
+                <td ng-click="gameboardTapped(3)">efefefefe</td>
+                <td ng-click="gameboardTapped(4)">efefefefe</td>
+                <td ng-click="gameboardTapped(5)">efefefefe</td>
+            </tr>
+            <tr>
+                <td ng-click="gameboardTapped(6)">efefefefe</td>
+                <td ng-click="gameboardTapped(7)">efefefefe</td>
+                <td ng-click="gameboardTapped(8)">efefefefe</td>
+            </tr>
+        </table>
+        <h1>{{gameboard}}</h1>
     </section>
 </body>
 </html>
