@@ -15,14 +15,16 @@
             };
 
             var setImageOnBoard = function (idNumber) {
-                var index = idNumber.toString();
-                var tableCell = document.getElementById(index);
+                var tableCell = document.getElementById(idNumber);
                 var img = document.createElement("img");
                 img.src = "images/" + currentPlayer + ".png";
                 tableCell.appendChild(img);
             };
 
             $scope.gameboardTapped = function (gridNumberFromTable) {
+                if ($scope.gameboard.charAt(gridNumberFromTable) !== '0') {
+                    return;
+                }
                 if (currentPlayer === '1') {
                     $scope.gameboard = setCharAt($scope.gameboard, gridNumberFromTable, currentPlayer);
                     setImageOnBoard(gridNumberFromTable);
@@ -34,11 +36,5 @@
                     currentPlayer = '1';
                 }
             };
-
-            var checkGrid = function (gridToCheck) {
-
-            };
-
-
         });
 })();
