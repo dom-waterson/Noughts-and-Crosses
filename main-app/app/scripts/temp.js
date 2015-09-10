@@ -2,36 +2,32 @@
     'use strict';
     angular.module('Tombola.NoughtAndCrosses.Core', [])
         .controller('MainController', function ($scope){
-            var me = this;
             var currentPlayer = '1';
-            $scope.player1 = 'test';
-            $scope.player2 = '';
+            $scope.player1 = 'human';
+            $scope.player2 = 'human';
             $scope.gameboard = '000000000';
+            $scope.imageURL = '1.png';
 
-            me.setCharAt = function (str, index, character) {
-                if(index > str.length-1) return str;
-                return str.substr(0,index) + character + str.substr(index+1);
+            var setCharAt = function (string, index, character) {
+                if(index > string.length-1) {
+                    return string;
+                }
+                return string.substr(0,index) + character + string.substr(index+1);
+            };
+
+            var setImageOnBoard = function (playerNumber) {
+
             };
 
             $scope.gameboardTapped = function (gridNumberFromTable) {
                 if (currentPlayer === '1') {
-                    //alert(gridNumberFromTable + "player: " + currentPlayer);
-                    //var temp = $scope.gameboard;
-                    //$scope.gameboard = setCharAt(temp, gridNumberFromTable, currentPlayer);
-                    //alert($scope.gameboard);
-                    var str = 'Hello World';
-                    //str = setCharAt(str,4,',');
-                    alert(str);
+                    $scope.gameboard = setCharAt($scope.gameboard, gridNumberFromTable, currentPlayer);
+                    setImageOnBoard(currentPlayer);
                     currentPlayer = '2';
                 }
                 else {
-                    //alert(gridNumberFromTable + "player: " + currentPlayer);
-                    //var temp = $scope.gameboard;
-                    //$scope.gameboard = setCharAt(temp, gridNumberFromTable, currentPlayer);
-                    //alert($scope.gameboard);
-                    var str = 'Hello World';
-                    str = setCharAt(str,4,',');
-                    alert(str);
+                    $scope.gameboard = setCharAt($scope.gameboard, gridNumberFromTable, currentPlayer);
+                    setImageOnBoard(currentPlayer);
                     currentPlayer = '1';
                 }
             };
