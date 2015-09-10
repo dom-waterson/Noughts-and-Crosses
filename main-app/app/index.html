@@ -5,6 +5,7 @@
     <title></title>
     <script src="../../bower_components/angular/angular.min.js"></script>
     <script src="scripts/temp.js"></script>
+    <link rel="stylesheet" href="css/main.css">
 </head>
 <body ng-controller="MainController">
     <section>
@@ -22,21 +23,21 @@
         </select>
     </section>
     <section ng-show="player1 == 'human' && player2 == 'human'">
-        <table id="gameboard" style="border:1px solid black;">
+        <table id="gameboard" >
             <tr>
-                <td ng-click="gameboardTapped(0)"><img ng-src="images/{{imageURL}}"></td>
-                <td ng-click="gameboardTapped(1)"><img ng-src="images/{{imageURL}}"></td>
-                <td ng-click="gameboardTapped(2)"><img ng-src="images/{{imageURL}}"></td>
+                <td id='0' ng-click="gameboardTapped(0)"></td>
+                <td class="cellBorder" id="1" ng-click="gameboardTapped(1)"></td>
+                <td id="2" ng-click="gameboardTapped(2)"></td>
             </tr>
-            <tr>
-                <td ng-click="gameboardTapped(3)"><img ng-src="images/{{imageURL}}"></td>
-                <td ng-click="gameboardTapped(4)"><img ng-src="images/{{imageURL}}"></td>
-                <td ng-click="gameboardTapped(5)"><img ng-src="images/{{imageURL}}"></td>
+            <tr class="rb">
+                <td class="rowBorder" id="3" ng-click="gameboardTapped(3)"></td>
+                <td class="rowBorder cellBorder" id="4" ng-click="gameboardTapped(4)"></td>
+                <td class="rowBorder" id="5" ng-click="gameboardTapped(5)"></td>
             </tr>
-            <tr>
-                <td ng-click="gameboardTapped(6)"><img ng-src="images/{{imageURL}}"></td>
-                <td ng-click="gameboardTapped(7)"><img ng-src="images/{{imageURL}}"></td>
-                <td ng-click="gameboardTapped(8)"><img ng-src="images/{{imageURL}}"></td>
+            <tr class="rb">
+                <td id="6" ng-click="gameboardTapped(6)"></td>
+                <td class="cellBorder"  id="7" ng-click="gameboardTapped(7)"></td>
+                <td id="8" ng-click="gameboardTapped(8)"></td>
             </tr>
         </table>
         <h1>{{gameboard}}</h1>
