@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="Tombola.NoughtAndCrosses.Core">
+<html lang="en" ng-app="Tombola.NoughtAndCrosses">
 <head>
     <meta charset="UTF-8">
     <title></title>
@@ -9,7 +9,7 @@
     <script src="scripts/app.js"></script>
     <link rel="stylesheet" href="css/main.css">
 </head>
-<body ng-controller="MainController">
+<body ng-controller="GameboardController">
     <section>
         <h1>Player1 : {{player1}}</h1>
         <h1>Player2 : {{player2}}</h1>
@@ -24,7 +24,7 @@
             <option value="pre-trained">Pre-trained Computer</option>
         </select>
     </section>
-    <section ng-show="player1 == 'human' && player2 == 'human'">
+    <section>
         <table id="gameboard" >
             <tr>
                 <td id='0' ng-click="gameboardTapped(0)"></td>
