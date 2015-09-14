@@ -1,6 +1,6 @@
 (function () {
     'use strict';
-    angular.module('Tombola.NoughtAndCrosses.Gameboard', [])
+    angular.module('Tombola.NoughtAndCrosses.Gameboard', ['Tombola.NoughtAndCrosses.GameApi'])
     .controller('GameboardController', function ($scope){
         var currentPlayer = '1';
         $scope.player1 = 'human';
