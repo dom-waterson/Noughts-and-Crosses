@@ -11,26 +11,41 @@
             return string.substr(0,index) + character + string.substr(index+1);
         };
 
-        var setImageOnBoard = function (idNumber) {
-            var tableCell = document.getElementById(idNumber);
-            var img = document.createElement("img");
-            img.src = "images/" + currentPlayer + ".png";
-            tableCell.appendChild(img);
-        };
-
         $scope.gameboardTapped = function (gridNumberFromTable) {
             if ($scope.gameboard.charAt(gridNumberFromTable) !== '0') {
                 return;
             }
             if (currentPlayer === '1') {
                 $scope.gameboard = setCharAt($scope.gameboard, gridNumberFromTable, currentPlayer);
-                setImageOnBoard(gridNumberFromTable);
                 currentPlayer = '2';
             }
             else {
                 $scope.gameboard = setCharAt($scope.gameboard, gridNumberFromTable, currentPlayer);
-                setImageOnBoard(gridNumberFromTable);
                 currentPlayer = '1';
+            }
+        };
+
+        $scope.selectOptionsForPlayer1 = function (){
+            if ($scope.player1 === "human") {
+                $scope.player1 = "pre-trained";
+            }
+            else if($scope.player1 === "pre-trained"){
+                $scope.player1 = "random";
+            }
+            else {
+                $scope.player1 = "human";
+            }
+        };
+
+        $scope.selectOptionsForPlayer2 = function (){
+            if ($scope.player2 === "human") {
+                $scope.player2 = "pre-trained";
+            }
+            else if($scope.player2 === "pre-trained"){
+                $scope.player2 = "random";
+            }
+            else {
+                $scope.player2 = "human";
             }
         };
     });
