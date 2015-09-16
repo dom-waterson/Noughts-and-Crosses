@@ -5,23 +5,29 @@
         var currentPlayer = '1';
         $scope.player1 = 'human';
         $scope.player2 = 'human';
-        $scope.gameboard = '000000000';
+        $scope.gameboard = '';
+        $scope.currentState = '';
 
         var setCharAt = function (string, index, character) {
             return string.substr(0,index) + character + string.substr(index+1);
         };
 
         $scope.gameboardTapped = function (gridNumberFromTable) {
-            if ($scope.gameboard.charAt(gridNumberFromTable) !== '0') {
+            if ($scope.gameboard.charAt(gridNumberFromTable) !== '0' || $scope.currentState === 'Win') {
                 return;
             }
-            $scope.gameboard = setCharAt($scope.gameboard, gridNumberFromTable, currentPlayer);
-            makeMove(gridNumberFromTable);
-            if (currentPlayer === '1') {
+            if ($scope.player1 !== "human"){
                 currentPlayer = '2';
             }
-            else {
-                currentPlayer = '1';
+            makeMove(gridNumberFromTable);
+            if ($scope.player1 === "human" && $scope.player2 === "human") {
+                $scope.gameboard = setCharAt($scope.gameboard, gridNumberFromTable, currentPlayer);
+                if (currentPlayer === '1') {
+                    currentPlayer = '2';
+                }
+                else {
+                    currentPlayer = '1';
+                }
             }
         };
 
@@ -52,10 +58,11 @@
         $scope.createGame = function () {
             GameApi.makeGame($scope.player1, $scope.player2)
                 .then(function(data){
-                    alert(data);
+                    $scope.gameboard = data.gameboard;
+                    $scope.currentState = data.outcome;
                 })
-                .catch(function(value){
-                    alert(value);
+                .catch(function(data){
+                    alert(data);
                 })
                 .finally(function(){
                     console.log('finally end callback called after success on newGame');
@@ -65,10 +72,11 @@
         var makeMove = function (gridIndex) {
             GameApi.makeGameMove(currentPlayer, gridIndex)
                 .then(function(data){
-                    alert(data);
+                    $scope.gameboard = data.gameboard;
+                    $scope.currentState = data.outcome;
                 })
-                .catch(function(value){
-                    alert(value);
+                .catch(function(data){
+                    alert(data);
                 })
                 .finally(function(){
                     console.log('finally end callback called after success on makemove');

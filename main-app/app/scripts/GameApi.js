@@ -26,7 +26,7 @@
                  'player1': playerOne,
                  'player2': playerTwo
              };
-             return callApi('newgame', data);
+              return callApi('newgame', data);
         };
 
         this.makeGameMove = function (currentPlayer, gridIndex) {
