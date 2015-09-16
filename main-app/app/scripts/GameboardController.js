@@ -1,7 +1,7 @@
 (function () {
     'use strict';
-    angular.module('Tombola.NoughtAndCrosses.Gameboard', [])
-    .controller('GameboardController',function ($scope, $http){
+    angular.module('Tombola.NoughtAndCrosses.Gameboard', ['Tombola.NoughtAndCrosses.api'])
+    .controller('GameboardController',function ($scope, GameApi){
         var currentPlayer = '1';
         $scope.player1 = 'human';
         $scope.player2 = 'human';
@@ -15,14 +15,12 @@
             if ($scope.gameboard.charAt(gridNumberFromTable) !== '0') {
                 return;
             }
+            $scope.gameboard = setCharAt($scope.gameboard, gridNumberFromTable, currentPlayer);
+            makeMove(gridNumberFromTable);
             if (currentPlayer === '1') {
-                $scope.gameboard = setCharAt($scope.gameboard, gridNumberFromTable, currentPlayer);
-                makeMove(gridNumberFromTable);
                 currentPlayer = '2';
             }
             else {
-                $scope.gameboard = setCharAt($scope.gameboard, gridNumberFromTable, currentPlayer);
-                makeMove(gridNumberFromTable);
                 currentPlayer = '1';
             }
         };
@@ -52,43 +50,16 @@
         };
 
         $scope.createGame = function () {
-            var req = {
-                method: 'POST',
-                url: 'http://eutaveg-01.tombola.emea:35000/api/v1.0/newgame',
-                'withCredentials': 'true',
-                data: { "player1":  $scope.player1,"player2": $scope.player2 }
-            };
-            $http(req).
-                then(function(response) {
-                    alert("outcome: " +response.data.outcome + " gameboard: " + response.data.gameboard + " Winner: " + response.data.winner);
-                }, function(response) {
-                    alert(response.data);
-                });
-            $http.post('http://eutaveg-01.tombola.emea:35000/api/v1.0/newgame', {"player1":  $scope.player1,"player2": $scope.player2}).
-                then(function(response) {
-                    // this callback will be called asynchronously
-                    // when the response is available
-                    alert(response.data.outcome);
-                }, function(response) {
-                    // called asynchronously if an error occurs
-                    // or server returns response with an error status.
-                    alert(response);
-                });
+            //var result = GameApi.makeGame($scope.player1, $scope.player2);
+            //alert(GameApi.makeGame($scope.player1, $scope.player2));
+            GameApi.makeGame($scope.player1, $scope.player2);
+
+
         };
 
         var makeMove = function (gridIndex) {
-            var req = {
-                method: 'POST',
-                url: 'http://eutaveg-01.tombola.emea:35000/api/v1.0/makemove',
-                'withCredentials': 'true',
-                data: {"playerNumber": currentPlayer,"chosenSquare":gridIndex}
-            };
-            $http(req).
-                then(function(response) {
-                    alert(response.data.outcome);
-                }, function(response) {
-                    alert(response.data);
-                });
+            GameApi.makeGameMove(currentPlayer, gridIndex);
+
         };
     });
 })();
