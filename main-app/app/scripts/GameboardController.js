@@ -50,16 +50,29 @@
         };
 
         $scope.createGame = function () {
-            //var result = GameApi.makeGame($scope.player1, $scope.player2);
-            //alert(GameApi.makeGame($scope.player1, $scope.player2));
-            GameApi.makeGame($scope.player1, $scope.player2);
-
-
+            GameApi.makeGame($scope.player1, $scope.player2)
+                .then(function(data){
+                    alert(data);
+                })
+                .catch(function(value){
+                    alert(value);
+                })
+                .finally(function(){
+                    console.log('finally end callback called after success on newGame');
+                });
         };
 
         var makeMove = function (gridIndex) {
-            GameApi.makeGameMove(currentPlayer, gridIndex);
-
+            GameApi.makeGameMove(currentPlayer, gridIndex)
+                .then(function(data){
+                    alert(data);
+                })
+                .catch(function(value){
+                    alert(value);
+                })
+                .finally(function(){
+                    console.log('finally end callback called after success on makemove');
+                });
         };
     });
 })();

@@ -14,9 +14,7 @@
             $http(req).
                 then(function(response) {
                     deferred.resolve(response.data);
-                    alert("outcome: " +response.data.outcome + " gameboard: " + response.data.gameboard + " Winner: " + response.data.winner);
                 }).catch( function(response) {
-                    deferred.reject(response.data);
                     deferred.reject(response.data);
                 });
 
@@ -28,7 +26,7 @@
                  'player1': playerOne,
                  'player2': playerTwo
              };
-             callApi('newgame', data);
+             return callApi('newgame', data);
         };
 
         this.makeGameMove = function (currentPlayer, gridIndex) {
@@ -36,7 +34,7 @@
                 'playerNumber': currentPlayer,
                 'chosenSquare': gridIndex
             };
-            callApi('makemove', data);
+            return callApi('makemove', data);
         };
     }]);
 })();
