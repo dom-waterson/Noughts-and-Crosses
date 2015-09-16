@@ -5,64 +5,42 @@
         var currentPlayer = '1';
         $scope.player1 = 'human';
         $scope.player2 = 'human';
-        $scope.gameboard = '';
-        $scope.currentState = '';
-
-        var setCharAt = function (string, index, character) {
-            return string.substr(0,index) + character + string.substr(index+1);
-        };
+        $scope.gameboard = '000000000';
+        var currentState = '';
+        $scope.winner = '';
 
         $scope.gameboardTapped = function (gridNumberFromTable) {
-            if ($scope.gameboard.charAt(gridNumberFromTable) !== '0' || $scope.currentState === 'Win') {
+            if ($scope.gameboard.charAt(gridNumberFromTable) !== '0' || currentState === 'Win') {
                 return;
             }
             if ($scope.player1 !== "human"){
                 currentPlayer = '2';
             }
             makeMove(gridNumberFromTable);
-            if ($scope.player1 === "human" && $scope.player2 === "human") {
-                $scope.gameboard = setCharAt($scope.gameboard, gridNumberFromTable, currentPlayer);
-                if (currentPlayer === '1') {
-                    currentPlayer = '2';
-                }
-                else {
-                    currentPlayer = '1';
-                }
-            }
         };
 
-        $scope.selectOptionsForPlayer1 = function (){
-            if ($scope.player1 === "human") {
-                $scope.player1 = "pre-trained";
+        $scope.selectOptionsForPlayers = function (playerNum) {
+            if($scope['player'+playerNum] === "human"){
+                $scope['player'+playerNum] = "pre-trained";
             }
-            else if($scope.player1 === "pre-trained"){
-                $scope.player1 = "random";
-            }
-            else {
-                $scope.player1 = "human";
-            }
-        };
-
-        $scope.selectOptionsForPlayer2 = function (){
-            if ($scope.player2 === "human") {
-                $scope.player2 = "pre-trained";
-            }
-            else if($scope.player2 === "pre-trained"){
-                $scope.player2 = "random";
+            else if($scope['player'+playerNum] === "pre-trained"){
+                $scope['player'+playerNum] = "random";
             }
             else {
-                $scope.player2 = "human";
+                $scope['player'+playerNum] = "human";
             }
         };
 
         $scope.createGame = function () {
+            currentPlayer = '1';
             GameApi.makeGame($scope.player1, $scope.player2)
                 .then(function(data){
                     $scope.gameboard = data.gameboard;
-                    $scope.currentState = data.outcome;
+                    currentState = data.outcome;
+                    $scope.winner = data.winner;
                 })
                 .catch(function(data){
-                    alert(data);
+                    alert("Error comeing from create Game: " + data);
                 })
                 .finally(function(){
                     console.log('finally end callback called after success on newGame');
@@ -73,10 +51,19 @@
             GameApi.makeGameMove(currentPlayer, gridIndex)
                 .then(function(data){
                     $scope.gameboard = data.gameboard;
-                    $scope.currentState = data.outcome;
+                    currentState = data.outcome;
+                    $scope.winner = data.winner;
+                    if ($scope.player1 === "human" && $scope.player2 === "human") {
+                        if (currentPlayer === '1') {
+                            currentPlayer = '2';
+                        }
+                        else {
+                            currentPlayer = '1';
+                        }
+                    }
                 })
                 .catch(function(data){
-                    alert(data);
+                    alert("Error coming from makeMove: " + data);
                 })
                 .finally(function(){
                     console.log('finally end callback called after success on makemove');
