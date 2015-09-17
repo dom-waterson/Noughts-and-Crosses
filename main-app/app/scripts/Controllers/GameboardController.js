@@ -5,12 +5,12 @@
         var currentPlayer = '1';
         $scope.player1 = 'human';
         $scope.player2 = 'human';
-        $scope.gameboard = '000000000';
-        var currentState = '';
+        $scope.gameboard = '';
+        $scope.currentState = '';
         $scope.winner = '';
 
         $scope.gameboardTapped = function (gridNumberFromTable) {
-            if ($scope.gameboard.charAt(gridNumberFromTable) !== '0' || currentState === 'Win') {
+            if ($scope.gameboard.charAt(gridNumberFromTable) !== '0' || $scope.currentState === 'Win') {
                 return;
             }
             if ($scope.player1 !== "human"){
@@ -35,9 +35,7 @@
             currentPlayer = '1';
             GameApi.makeGame($scope.player1, $scope.player2)
                 .then(function(data){
-                    $scope.gameboard = data.gameboard;
-                    currentState = data.outcome;
-                    $scope.winner = data.winner;
+                    updateGameStatus(data);
                 })
                 .catch(function(data){
                     alert("Error comeing from create Game: " + data);
@@ -50,9 +48,7 @@
         var makeMove = function (gridIndex) {
             GameApi.makeGameMove(currentPlayer, gridIndex)
                 .then(function(data){
-                    $scope.gameboard = data.gameboard;
-                    currentState = data.outcome;
-                    $scope.winner = data.winner;
+                    updateGameStatus(data);
                     if ($scope.player1 === "human" && $scope.player2 === "human") {
                         if (currentPlayer === '1') {
                             currentPlayer = '2';
@@ -68,6 +64,12 @@
                 .finally(function(){
                     console.log('finally end callback called after success on makemove');
                 });
+        };
+
+        var updateGameStatus = function (data) {
+            $scope.gameboard = data.gameboard;
+            $scope.currentState = data.outcome;
+            $scope.winner = data.winner;
         };
     });
 })();
