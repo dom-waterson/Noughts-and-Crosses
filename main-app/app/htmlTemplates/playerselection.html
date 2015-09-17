@@ -1,0 +1,15 @@
+<section>
+    <div ng-click="selectOptionsForPlayers(1)" class="{{player1}}">
+    </div>
+    <div ng-click="selectOptionsForPlayers(2)" class="{{player2}}">
+    </div>
+    <select ng-model="player1">
+        <option value="human">Human</option>
+        <option value="random">Random Computer</option>
+        <option value="pre-trained">Pre-trained Computer</option>
+    </select>
+    <select ng-model="player2">
+        <option value="human">Human</option>
+        <option value="random">Random Computer</option>
+        <option value="pre-trained">Pre-trained Computer</option>
+    </select>
