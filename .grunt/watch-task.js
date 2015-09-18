@@ -10,7 +10,7 @@
             tasks: ['jsFiles']
         },
         html: {
-            files: ['main-app/app/index.html', 'main-app/app/htmlTemplates/*.html'],
+            files: ['main-app/app/index.html','main-app/app/html/**/*.html'],
             tasks: ['htmlFiles']
         }
     };

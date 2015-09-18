@@ -1,6 +1,6 @@
 (function () {
     'use strict';
-    angular.module('Tombola.NoughtAndCrosses.api', [])
+    angular.module('Tombola.NoughtAndCrosses.api')
         .service ('GameApi', ['$http', '$q', function ($http, $q){
 
         var callApi = function (endpoint, data){

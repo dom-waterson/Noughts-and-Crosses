@@ -1,10 +1,9 @@
 (function () {
     'use strict';
-    angular.module('Tombola.NoughtAndCrosses.Gameboard', ['Tombola.NoughtAndCrosses.api'])
+    angular.module('Tombola.NoughtAndCrosses')
     .controller('GameboardController',function ($scope, GameApi){
-            //$scope.Model = $scope.Model || {Name : "xxx"};
         var currentPlayer = '1';
-        $scope.player1 = 'human';
+        $scope.player1 ='human';
         $scope.player2 = 'human';
         $scope.gameboard = '';
         $scope.currentState = '';
