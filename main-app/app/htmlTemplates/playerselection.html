@@ -13,4 +13,4 @@
     <option value="random">Random Computer</option>
     <option value="pre-trained">Pre-trained Computer</option>
 </select><br/>
-<button ng-click="createGame()" ng-hide="currentState === 'Continue'" ng-show="currentState === 'Draw' || currentState === 'Win'">New Game</button>
+<button ui-sref="gameInProgress" ng-click="createGame()">New Game</button>
