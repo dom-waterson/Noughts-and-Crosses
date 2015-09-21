@@ -1,10 +1,8 @@
 (function () {
     'use strict';
     angular.module('Tombola.NoughtAndCrosses')
-    .controller('GameboardController',function ($scope, GameApi){
+    .controller('GameboardController',function ($scope, GameApi, playerToggle){
         var currentPlayer = '1';
-        $scope.player1 ='human';
-        $scope.player2 = 'human';
         $scope.gameboard = '';
         $scope.currentState = '';
         $scope.winner = '';
@@ -13,27 +11,15 @@
             if ($scope.gameboard.charAt(gridNumberFromTable) !== '0' || $scope.currentState === 'Win') {
                 return;
             }
-            if ($scope.player1 !== "human"){
+            if (playerToggle.player1 !== "human"){
                 currentPlayer = '2';
             }
             makeMove(gridNumberFromTable);
         };
 
-        $scope.selectOptionsForPlayers = function (playerNum) {
-            if($scope['player'+playerNum] === "human"){
-                $scope['player'+playerNum] = "pre-trained";
-            }
-            else if($scope['player'+playerNum] === "pre-trained"){
-                $scope['player'+playerNum] = "random";
-            }
-            else {
-                $scope['player'+playerNum] = "human";
-            }
-        };
-
         $scope.createGame = function () {
             currentPlayer = '1';
-            GameApi.makeGame($scope.player1, $scope.player2)
+            GameApi.makeGame(playerToggle.player1, playerToggle.player2)
                 .then(function(data){
                     updateGameStatus(data);
                 })
@@ -49,7 +35,7 @@
             GameApi.makeGameMove(currentPlayer, gridIndex)
                 .then(function(data){
                     updateGameStatus(data);
-                    if ($scope.player1 === "human" && $scope.player2 === "human") {
+                    if (playerToggle.player1 === "human" && playerToggle.player2 === "human") {
                         if (currentPlayer === '1') {
                             currentPlayer = '2';
                         }
