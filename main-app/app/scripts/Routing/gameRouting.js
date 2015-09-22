@@ -6,12 +6,12 @@
             $stateProvider
                 .state('createGame', {
                     url: "/selectPlayers",
-                    templateUrl: "/html/views/playerselection.html"
+                    templateUrl: "html/views/playerselection.html"
 
                 })
                 .state ('gameInProgress', {
                     url: "/playingGame",
-                    templateUrl: "/html/views/gameboard.html"
+                    templateUrl: "html/views/gameboard.html"
                  });
         }]);
 })();
