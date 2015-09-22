@@ -1,7 +1,7 @@
 (function () {
     'use strict';
-    angular.module('Tombola.NoughtAndCrosses')
-    .controller('GameboardController',function ($scope, GameApi, playerToggle){
+    angular.module('Tombola.NoughtAndCrosses.gameboard')
+    .controller('GameboardController',function ($scope, Proxy, playerToggle){
         var currentPlayer = '1';
         $scope.gameboard = '';
         $scope.currentState = '';
@@ -19,7 +19,7 @@
 
         $scope.createGame = function () {
             currentPlayer = '1';
-            GameApi.makeGame(playerToggle.player1, playerToggle.player2)
+            Proxy.makeGame(playerToggle.player1, playerToggle.player2)
                 .then(function(data){
                     updateGameStatus(data);
                 })
@@ -32,7 +32,7 @@
         };
 
         var makeMove = function (gridIndex) {
-            GameApi.makeGameMove(currentPlayer, gridIndex)
+            Proxy.makeGameMove(currentPlayer, gridIndex)
                 .then(function(data){
                     updateGameStatus(data);
                     if (playerToggle.player1 === "human" && playerToggle.player2 === "human") {
