@@ -1,30 +1,27 @@
 (function () {
     'use strict';
     angular.module('Tombola.NoughtAndCrosses.gameboard')
-    .controller('GameboardController',function ($scope, Proxy, playerToggle){
-        var currentPlayer = '1';
-        $scope.gameboard = '';
-        $scope.currentState = '';
-        $scope.winner = '';
+    .controller('GameboardController',function ($scope, Proxy, playerToggle, GameModel){
+
+        $scope.gameModel = GameModel;
 
         $scope.gameboardTapped = function (gridNumberFromTable) {
-            if ($scope.gameboard.charAt(gridNumberFromTable) !== '0' || $scope.currentState === 'Win') {
+            if (GameModel.gameboard.charAt(gridNumberFromTable) !== '0' || GameModel.currentState === 'Win') {
                 return;
             }
             if (playerToggle.player1 !== "human"){
-                currentPlayer = '2';
+                GameModel.currentPlayer = '2';
             }
             makeMove(gridNumberFromTable);
         };
 
         $scope.createGame = function () {
-            currentPlayer = '1';
             Proxy.makeGame(playerToggle.player1, playerToggle.player2)
                 .then(function(data){
-                    updateGameStatus(data);
+                    GameModel.startNewGame(data.gameboard, data.outcome, data.winner);
                 })
                 .catch(function(data){
-                    alert("Error comeing from create Game: " + data);
+                    alert("Error coming from create Game: " + data);
                 })
                 .finally(function(){
                     console.log('finally end callback called after success on newGame');
@@ -32,15 +29,15 @@
         };
 
         var makeMove = function (gridIndex) {
-            Proxy.makeGameMove(currentPlayer, gridIndex)
+            Proxy.makeGameMove(GameModel.currentPlayer, gridIndex)
                 .then(function(data){
-                    updateGameStatus(data);
+                    GameModel.updateGameStatus(data.gameboard, data.outcome, data.winner);
                     if (playerToggle.player1 === "human" && playerToggle.player2 === "human") {
-                        if (currentPlayer === '1') {
-                            currentPlayer = '2';
+                        if (GameModel.currentPlayer === '1') {
+                            GameModel.currentPlayer = '2';
                         }
                         else {
-                            currentPlayer = '1';
+                            GameModel.currentPlayer = '1';
                         }
                     }
                 })
@@ -50,12 +47,6 @@
                 .finally(function(){
                     console.log('finally end callback called after success on makemove');
                 });
-        };
-
-        var updateGameStatus = function (data) {
-            $scope.gameboard = data.gameboard;
-            $scope.currentState = data.outcome;
-            $scope.winner = data.winner;
         };
     });
 })();
