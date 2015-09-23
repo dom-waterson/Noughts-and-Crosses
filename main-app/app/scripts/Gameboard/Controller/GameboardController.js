@@ -9,9 +9,6 @@
             if (GameModel.gameboard.charAt(gridNumberFromTable) !== '0' || GameModel.currentState === 'Win') {
                 return;
             }
-            if (playerToggle.player1 !== "human"){
-                GameModel.currentPlayer = '2';
-            }
             makeMove(gridNumberFromTable);
         };
 
@@ -31,15 +28,7 @@
         var makeMove = function (gridIndex) {
             Proxy.makeGameMove(GameModel.currentPlayer, gridIndex)
                 .then(function(data){
-                    GameModel.updateGameStatus(data.gameboard, data.outcome, data.winner);
-                    if (playerToggle.player1 === "human" && playerToggle.player2 === "human") {
-                        if (GameModel.currentPlayer === '1') {
-                            GameModel.currentPlayer = '2';
-                        }
-                        else {
-                            GameModel.currentPlayer = '1';
-                        }
-                    }
+                    GameModel.makingMove(data.gameboard, data.outcome, data.winner);
                 })
                 .catch(function(data){
                     alert("Error coming from makeMove: " + data);

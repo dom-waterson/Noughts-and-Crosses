@@ -5,7 +5,7 @@
 
             var me = this;
 
-            me.currentPlayer = '1';
+            me.currentPlayer = '';
             me.gameboard = '';
             me.currentState = '';
             me.winner = '';
@@ -14,18 +14,34 @@
                 me.gameboard = gameboard;
                 me.currentState = outcome;
                 me.winner = winner;
-                //toggleCurrentPlayer();
             };
 
             me.startNewGame = function (gameboard, outcome, winner) {
-                me.currentPlayer = '1';
+                startCurrentPlayer();
                 me.updateGameStatus(gameboard, outcome, winner);
             };
 
-            //var toggleCurrentPlayer = function () {
-            //    if (playerToggle.player1 !== "human"){
-            //        me.currentPlayer = '2';
-            //    }
-            //};
+            me.makingMove = function(gameboard, outcome, winner){
+                me.updateGameStatus(gameboard, outcome, winner);
+                toggleCurrentPlayer();
+            };
+
+            var toggleCurrentPlayer = function () {
+                if (playerToggle.player1 === "human" && playerToggle.player2 === "human") {
+                    if (me.currentPlayer === '1') {
+                        me.currentPlayer = '2';
+                    }
+                    else {
+                        me.currentPlayer = '1';
+                    }
+                }
+            };
+
+            var startCurrentPlayer = function () {
+                me.currentPlayer = '1';
+                if (playerToggle.player1 !== "human"){
+                    me.currentPlayer = '2';
+                }
+            };
         }]);
 })();
