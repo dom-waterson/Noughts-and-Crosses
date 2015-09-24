@@ -13,3 +13,56 @@ a{
     color: @link-lowlight-color;
   }
 }
+
+table tr td {
+  width: 52px;
+  height: 53px;
+}
+
+.rowBorder {
+  border-top: 1px solid @link-color;
+  border-bottom: 1px solid @link-color;
+}
+
+.cellBorder {
+  border-left: 1px solid @link-color;
+  border-right: 1px solid @link-color;
+}
+
+.player1, .player2 {
+  background: url('../images/noughtsAndCrosses.png') no-repeat;
+}
+
+.player1 {
+  background-position: -1px -0;
+  width: 50px;
+  height: 50px;
+}
+
+.player2 {
+  background-position: -1px -51px;
+  width: 50px;
+  height: 50px;
+}
+
+.human, .pre-trained, .random {
+  background: url('../images/options.png') no-repeat;
+}
+
+.human {
+  background-position: -1px -0;
+  width: 148px;
+  height: 148px;
+}
+
+.pre-trained {
+  background-position: -1px -149px;
+  width: 148px;
+  height: 148px;
+}
+
+.random {
+  background-position: -1px -298px;
+  width: 148px;
+  height: 148px;
+}
