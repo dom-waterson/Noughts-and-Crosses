@@ -1,20 +1,22 @@
 <table>
     <tr>
-        <td class="player{{game.gameModel.gameboard[0]}}" ng-click="game.gameboardTapped(0)"></td>
-        <td class="cellBorder player{{game.gameModel.gameboard[1]}}" ng-click="game.gameboardTapped(1)"></td>
-        <td class="player{{game.gameModel.gameboard[2]}}" ng-click="game.gameboardTapped(2)"></td>
+        <td><game-cell square-number="0"></game-cell></td>
+        <td class="cellBorder"><game-cell square-number="1"></game-cell></td>
+        <td><game-cell square-number="2"></game-cell></td>
     </tr>
     <tr class="rb">
-        <td class="rowBorder player{{game.gameModel.gameboard[3]}}" ng-click="game.gameboardTapped(3)"></td>
-        <td class="rowBorder cellBorder player{{game.gameModel.gameboard[4]}}" ng-click="game.gameboardTapped(4)"></td>
-        <td class="rowBorder player{{game.gameModel.gameboard[5]}}" ng-click="game.gameboardTapped(5)"></td>
+        <td class="rowBorder"><game-cell square-number="3"></game-cell></td>
+        <td class="rowBorder cellBorder"><game-cell square-number="4"></game-cell></td>
+        <td class="rowBorder"><game-cell square-number="5"></game-cell></td>
     </tr>
     <tr class="rb">
-        <td class="player{{game.gameModel.gameboard[6]}}" ng-click="game.gameboardTapped(6)"></td>
-        <td class="cellBorder player{{game.gameModel.gameboard[7]}}" ng-click="game.gameboardTapped(7)"></td>
-        <td class="player{{game.gameModel.gameboard[8]}}" ng-click="game.gameboardTapped(8)"></td>
+        <td><game-cell square-number="6"></game-cell></td>
+        <td class="cellBorder"><game-cell square-number="7"></game-cell></td>
+        <td><game-cell square-number="8"></game-cell></td>
     </tr>
 </table>
 <button ui-sref="createGame">Select Players</button>
 <button ng-click="game.createGame()">Play again!</button>
+
+
 
