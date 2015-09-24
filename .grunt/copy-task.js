@@ -17,7 +17,7 @@
 
         mainapphtml: {
             cwd:'',
-            src: ['main-app/app/*.html'],
+            src: ['main-app/app/*.html','main-app/app/htmlTemplates/*.html'],
             dest: '.build/',
             expand: true
         },

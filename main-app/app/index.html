@@ -2,52 +2,17 @@
 <html lang="en" ng-app="Tombola.NoughtAndCrosses">
 <head>
     <meta charset="UTF-8">
-    <title></title>
-    <!--<script src="../../bower_components/angular/angular.min.js"></script>-->
-    <!--<script src="scripts/temp.js"></script>-->
+    <title>Noughts and Crosses</title>
     <script src="../../thirdparty/bower_components/angular/angular.min.js"></script>
     <script src="scripts/app.js"></script>
     <link rel="stylesheet" href="css/main.css">
 </head>
 <body ng-controller="GameboardController">
-    <section>
-        <div ng-click="selectOptionsForPlayer1()" class="{{player1}}">
-            <!--<h1>Player1 : {{player1}}</h1>-->
-        </div>
-        <div ng-click="selectOptionsForPlayer2()" class="{{player2}}">
-            <!--<h1>Player2 : {{player2}}</h1>-->
-        </div>
-
-        <select ng-model="player1">
-            <option value="human">Human</option>
-            <option value="random">Random Computer</option>
-            <option value="pre-trained">Pre-trained Computer</option>
-        </select>
-        <select ng-model="player2">
-            <option value="human">Human</option>
-            <option value="random">Random Computer</option>
-            <option value="pre-trained">Pre-trained Computer</option>
-        </select>
-    </section>
-    <section>
-        <table id="gameboard" >
-            <tr>
-                <td class="player{{gameboard[0]}}" ng-click="gameboardTapped(0)"><img src="images/blank.png"></td>
-                <td class="cellBorder player{{gameboard[1]}}" ng-click="gameboardTapped(1)"><img src="images/blank.png"></td>
-                <td class="player{{gameboard[2]}}" ng-click="gameboardTapped(2)"><img src="images/blank.png"></td>
-            </tr>
-            <tr class="rb">
-                <td class="rowBorder player" ng-click="gameboardTapped(3)"><img src="images/blank.png" class="player{{gameboard[3]}}"></td>
-                <td class="rowBorder cellBorder player" ng-click="gameboardTapped(4)"><img src="images/blank.png" class="player{{gameboard[4]}}"></td>
-                <td class="rowBorder player" ng-click="gameboardTapped(5)"><img src="images/blank.png" class="player{{gameboard[5]}}"></td>
-            </tr>
-            <tr class="rb">
-                <td class="player" ng-click="gameboardTapped(6)"><img src="images/blank.png" class="player{{gameboard[6]}}"></td>
-                <td class="cellBorder player" ng-click="gameboardTapped(7)"><img src="images/blank.png" class="player{{gameboard[7]}}"></td>
-                <td class="player" ng-click="gameboardTapped(8)"><img src="images/blank.png" class="player{{gameboard[8]}}"></td>
-            </tr>
-        </table>
-        <h1>{{gameboard}}</h1>
-    </section>
+    <player-selection>
+    </player-selection>
+    <game-board>
+    </game-board>
+    <game-state>
+    </game-state>
 </body>
 </html>

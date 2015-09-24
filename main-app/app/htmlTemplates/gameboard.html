@@ -1,0 +1,17 @@
+<table id="gameboard" >
+    <tr>
+        <td class="player{{gameboard[0]}}" ng-click="gameboardTapped(0)"><img src="images/blank.png"></td>
+        <td class="cellBorder player{{gameboard[1]}}" ng-click="gameboardTapped(1)"><img src="images/blank.png"></td>
+        <td class="player{{gameboard[2]}}" ng-click="gameboardTapped(2)"><img src="images/blank.png"></td>
+    </tr>
+    <tr class="rb">
+        <td class="rowBorder player" ng-click="gameboardTapped(3)"><img src="images/blank.png" class="player{{gameboard[3]}}"></td>
+        <td class="rowBorder cellBorder player" ng-click="gameboardTapped(4)"><img src="images/blank.png" class="player{{gameboard[4]}}"></td>
+        <td class="rowBorder player" ng-click="gameboardTapped(5)"><img src="images/blank.png" class="player{{gameboard[5]}}"></td>
+    </tr>
+    <tr class="rb">
+        <td class="player" ng-click="gameboardTapped(6)"><img src="images/blank.png" class="player{{gameboard[6]}}"></td>
+        <td class="cellBorder player" ng-click="gameboardTapped(7)"><img src="images/blank.png" class="player{{gameboard[7]}}"></td>
+        <td class="player" ng-click="gameboardTapped(8)"><img src="images/blank.png" class="player{{gameboard[8]}}"></td>
+    </tr>
+</table>

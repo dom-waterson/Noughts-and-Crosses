@@ -6,11 +6,11 @@
             tasks: ['lessFiles']
         },
         javascript: {
-            files: ['main-app/app/scripts/*.js'],
+            files: ['main-app/app/scripts/**/*.js'],
             tasks: ['jsFiles']
         },
         html: {
-            files: ['main-app/app/index.html'],
+            files: ['main-app/app/index.html', 'main-app/app/htmlTemplates/*.html'],
             tasks: ['htmlFiles']
         }
     };

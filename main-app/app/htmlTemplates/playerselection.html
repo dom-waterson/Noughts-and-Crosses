@@ -1,0 +1,16 @@
+<div ng-click="selectOptionsForPlayers(1)" class="{{player1}} select">
+</div>
+<div ng-click="selectOptionsForPlayers(2)" class="{{player2}} select">
+</div>
+<br/>
+<select ng-model="player1">
+    <option value="human">Human</option>
+    <option value="random">Random Computer</option>
+    <option value="pre-trained">Pre-trained Computer</option>
+</select>
+<select ng-model="player2">
+    <option value="human">Human</option>
+    <option value="random">Random Computer</option>
+    <option value="pre-trained">Pre-trained Computer</option>
+</select><br/>
+<button ng-click="createGame()" ng-hide="currentState === 'Continue'" ng-show="currentState === 'Draw' || currentState === 'Win'">New Game</button>
