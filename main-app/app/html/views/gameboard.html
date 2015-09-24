@@ -1,20 +1,20 @@
 <table>
     <tr>
-        <td class="player{{gameModel.gameboard[0]}}" ng-click="gameboardTapped(0)"></td>
-        <td class="cellBorder player{{gameModel.gameboard[1]}}" ng-click="gameboardTapped(1)"></td>
-        <td class="player{{gameModel.gameboard[2]}}" ng-click="gameboardTapped(2)"></td>
+        <td class="player{{game.gameModel.gameboard[0]}}" ng-click="game.gameboardTapped(0)"></td>
+        <td class="cellBorder player{{game.gameModel.gameboard[1]}}" ng-click="game.gameboardTapped(1)"></td>
+        <td class="player{{game.gameModel.gameboard[2]}}" ng-click="game.gameboardTapped(2)"></td>
     </tr>
     <tr class="rb">
-        <td class="rowBorder player{{gameModel.gameboard[3]}}" ng-click="gameboardTapped(3)"></td>
-        <td class="rowBorder cellBorder player{{gameModel.gameboard[4]}}" ng-click="gameboardTapped(4)"></td>
-        <td class="rowBorder player{{gameModel.gameboard[5]}}" ng-click="gameboardTapped(5)"></td>
+        <td class="rowBorder player{{game.gameModel.gameboard[3]}}" ng-click="game.gameboardTapped(3)"></td>
+        <td class="rowBorder cellBorder player{{game.gameModel.gameboard[4]}}" ng-click="game.gameboardTapped(4)"></td>
+        <td class="rowBorder player{{game.gameModel.gameboard[5]}}" ng-click="game.gameboardTapped(5)"></td>
     </tr>
     <tr class="rb">
-        <td class="player{{gameModel.gameboard[6]}}" ng-click="gameboardTapped(6)"></td>
-        <td class="cellBorder player{{gameModel.gameboard[7]}}" ng-click="gameboardTapped(7)"></td>
-        <td class="player{{gameModel.gameboard[8]}}" ng-click="gameboardTapped(8)"></td>
+        <td class="player{{game.gameModel.gameboard[6]}}" ng-click="game.gameboardTapped(6)"></td>
+        <td class="cellBorder player{{game.gameModel.gameboard[7]}}" ng-click="game.gameboardTapped(7)"></td>
+        <td class="player{{game.gameModel.gameboard[8]}}" ng-click="game.gameboardTapped(8)"></td>
     </tr>
 </table>
 <button ui-sref="createGame">Select Players</button>
-<button ng-click="createGame()">Play again!</button>
+<button ng-click="game.createGame()">Play again!</button>
 

@@ -3,16 +3,16 @@
     angular.module('Tombola.NoughtAndCrosses.gameboard')
     .controller('GameboardController',function ($scope, Proxy, playerToggle, GameModel){
 
-        $scope.gameModel = GameModel;
+        this.gameModel = GameModel;
 
-        $scope.gameboardTapped = function (gridNumberFromTable) {
+        this.gameboardTapped = function (gridNumberFromTable) {
             if (GameModel.gameboard.charAt(gridNumberFromTable) !== '0' || GameModel.currentState === 'Win') {
                 return;
             }
             makeMove(gridNumberFromTable);
         };
 
-        $scope.createGame = function () {
+        this.createGame = function () {
             Proxy.makeGame(playerToggle.player1, playerToggle.player2)
                 .then(function(data){
                     GameModel.startNewGame(data.gameboard, data.outcome, data.winner);
