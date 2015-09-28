@@ -16,10 +16,6 @@
                     url: '/gameDrawn',
                     templateUrl: 'html/views/drawView.html'
                 })
-                .state ('lost', {
-                    url: '/gameLost',
-                    templateUrl: 'html/views/loseView.html'
-                })
                 .state ('win', {
                     url: '/gameWon',
                     templateUrl: 'html/views/winView.html'
