@@ -17,12 +17,6 @@
                 .then(function(data){
                     GameModel.startNewGame(data.gameboard, data.outcome, data.winner);
                     winStates.checkStatusWithDelay();
-                })
-                .catch(function(data){
-                    alert("Error coming from create Game: " + data);
-                })
-                .finally(function(){
-                    console.log('finally end callback called after success on newGame');
                 });
         };
 
@@ -31,12 +25,6 @@
                 .then(function(data){
                     GameModel.makingMove(data.gameboard, data.outcome, data.winner);
                     winStates.checkStatusWithDelay();
-                })
-                .catch(function(data){
-                    alert("Error coming from makeMove: " + data);
-                })
-                .finally(function(){
-                    console.log('finally end callback called after success on makemove');
                 });
         };
     });
