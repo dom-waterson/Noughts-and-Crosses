@@ -6,7 +6,7 @@
         this.gameModel = GameModel;
 
         this.gameboardTapped = function (gridNumberFromTable) {
-            if (GameModel.gameboard.charAt(gridNumberFromTable) !== '0' || GameModel.currentState === 'Win') {
+            if (GameModel.isSquareSelected(gridNumberFromTable) || GameModel.isGameInPlay()){
                 return;
             }
             makeMove(gridNumberFromTable);
