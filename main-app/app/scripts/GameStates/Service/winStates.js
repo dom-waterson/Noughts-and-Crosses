@@ -6,15 +6,15 @@
 
             var checkStates = function () {
                 if (GameModel.currentState === "Win"){
-                    $state.go('win');
+                    $state.go('gameInProgress.win');
                 }
                 if (GameModel.currentState === "Draw"){
-                    $state.go('draw');
+                    $state.go('gameInProgress.draw');
                 }
             };
 
             me.checkStatusWithDelay = function (){
-                $timeout(checkStates,3000);
+                $timeout(checkStates,1500);
             };
         }]);
 })();

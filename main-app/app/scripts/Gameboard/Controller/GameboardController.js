@@ -4,6 +4,7 @@
     .controller('GameboardController',function ($scope, Proxy, playerToggle, GameModel, winStates){
 
         this.gameModel = GameModel;
+        this.players = playerToggle;
 
         this.gameboardTapped = function (gridNumberFromTable) {
             if (GameModel.isSquareSelected(gridNumberFromTable) || GameModel.isGameInPlay()){

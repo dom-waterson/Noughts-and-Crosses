@@ -12,11 +12,11 @@
                     url: "/playingGame",
                     templateUrl: "html/views/gameboard.html"
                  })
-                .state ('draw', {
+                .state ('gameInProgress.draw', {
                     url: '/gameDrawn',
                     templateUrl: 'html/views/drawView.html'
                 })
-                .state ('win', {
+                .state ('gameInProgress.win', {
                     url: '/gameWon',
                     templateUrl: 'html/views/winView.html'
                 });
