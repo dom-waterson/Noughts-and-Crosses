@@ -1,9 +1,9 @@
 (function () {
     'use strict';
     angular.module('Tombola.NoughtAndCrosses')
-        .directive('playerSelection', function () {
+        .directive('gameState', function () {
             return {
-                templateUrl: 'htmlTemplates/playerselection.html'
+                templateUrl: 'html/directives/gameState.html'
             };
         });
 })();

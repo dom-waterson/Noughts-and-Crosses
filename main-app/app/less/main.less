@@ -24,6 +24,11 @@ table tr td {
   height: 105px;
 }
 
+.cellSize {
+  width: 105px;
+  height: 105px;
+}
+
 .rowBorder {
   border-top: 1px solid @link-color;
   border-bottom: 1px solid @link-color;
@@ -34,33 +39,10 @@ table tr td {
   border-right: 1px solid @link-color;
 }
 
-
-
 //Styles for the image sprites
-//.player1, .player2 {
-//  background: url('../images/noughtsAndCrosses.png') no-repeat;
-//}
-//
-//.player1 {
-//  background-position: -1px -0;
-//  width: 50px;
-//  height: 50px;
-//}
-//
-//.player2 {
-//  background-position: -1px -51px;
-//  width: 50px;
-//  height: 50px;
-//}
-
-.player2, .player1
-{  background: url('../images/test.png') no-repeat;  }
-
-.player2 { background-position: -1px -0; width: 100px; height: 100px; }
-.player1 { background-position: -1px -101px; width: 100px; height: 100px; }
-
-.human, .pre-trained, .random {
-  background: url('../images/options.png') no-repeat;
+.human, .pre-trained, .random, .player1, .player2
+{
+  background: url('../images/images.png') no-repeat;
 }
 
 .human {
@@ -79,4 +61,16 @@ table tr td {
   background-position: -1px -298px;
   width: 148px;
   height: 148px;
+}
+
+.player2 {
+  background-position: -1px -447px;
+  width: 100px;
+  height: 100px;
+}
+
+.player1 {
+  background-position: -1px -548px;
+  width: 100px;
+  height: 100px;
 }

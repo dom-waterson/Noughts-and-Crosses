@@ -1,0 +1,8 @@
+<div ng-controller="playerSelection as player">
+    <div ng-click="player.playerSelection.togglePlayer(1)" class="{{player.playerSelection.player1}} select">
+    </div>
+    <div ng-click="player.playerSelection.togglePlayer(2)" class="{{player.playerSelection.player2}} select">
+    </div>
+    <br/>
+    <button ui-sref="gameInProgress" ng-click="game.createGame()">New Game</button>
+</div>

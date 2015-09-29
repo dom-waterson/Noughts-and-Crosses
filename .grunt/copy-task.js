@@ -17,7 +17,7 @@
 
         mainapphtml: {
             cwd:'',
-            src: ['main-app/app/*.html','main-app/app/htmlTemplates/*.html'],
+            src: ['main-app/app/index.html','main-app/app/html/**/*.html'],
             dest: '.build/',
             expand: true
         },
@@ -25,7 +25,7 @@
         mainappbower: {
             cwd:'',
             src: ['bower_components/**/*.*'],
-            dest: '.build/thirdparty/',
+            dest: '.build/main-app/app/thirdparty/',
             expand: true
         }
     };
