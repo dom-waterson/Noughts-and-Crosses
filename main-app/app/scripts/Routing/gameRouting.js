@@ -8,6 +8,10 @@
                     url: "/selectPlayers",
                     templateUrl: "html/views/playerselection.html"
                 })
+                .state('createGame.rules', {
+                    url: "/rules",
+                    templateUrl: "html/views/rules.html"
+                })
                 .state ('gameInProgress', {
                     url: "/playingGame",
                     templateUrl: "html/views/gameboard.html"

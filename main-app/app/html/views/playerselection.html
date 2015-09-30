@@ -1,8 +1,12 @@
-<div ng-controller="playerSelection as player" class="animated fadeInDownBig">
+<div ng-controller="playerSelection as player" class=" centre animated fadeInDownBig">
+    <h1>Select Your Players</h1>
+    <h3>{{player.playerSelection.player1 | uppercase}} vs {{player.playerSelection.player2 | uppercase}}</h3>
     <div ng-click="player.playerSelection.togglePlayer(1)" class="{{player.playerSelection.player1}} select">
     </div>
     <div ng-click="player.playerSelection.togglePlayer(2)" class="{{player.playerSelection.player2}} select">
     </div>
     <br/>
-    <button ui-sref="gameInProgress" ng-click="game.createGame()">New Game</button>
+    <button ui-sref="gameInProgress" ng-click="game.createGame()">Play!</button>
+    <button ui-sref="createGame.rules" >Rules</button>
 </div>
+<div ui-view></div>

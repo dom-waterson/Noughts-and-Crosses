@@ -1,25 +1,18 @@
-<div class="animated fadeInUpBig">
-    <h1>{{game.players.player1}} vs {{game.players.player2}}</h1>
-    <table >
-        <tr>
-            <td><game-cell square-number="0"></game-cell></td>
-            <td class="cellBorder"><game-cell square-number="1"></game-cell></td>
-            <td><game-cell square-number="2"></game-cell></td>
-        </tr>
-        <tr class="rb">
-            <td class="rowBorder"><game-cell square-number="3"></game-cell></td>
-            <td class="rowBorder cellBorder"><game-cell square-number="4"></game-cell></td>
-            <td class="rowBorder"><game-cell square-number="5"></game-cell></td>
-        </tr>
-        <tr class="rb">
-            <td><game-cell square-number="6"></game-cell></td>
-            <td class="cellBorder"><game-cell square-number="7"></game-cell></td>
-            <td><game-cell square-number="8"></game-cell></td>
-        </tr>
-    </table>
+<div class="centre ">
+    <h1 class="centre animated slideInLeft">{{game.players.player1 | uppercase}} vs {{game.players.player2 | uppercase}}</h1>
+    <div class="gameboard animated slideInRight">
+        <game-cell square-number="0"></game-cell>
+        <game-cell square-number="1"></game-cell>
+        <game-cell square-number="2"></game-cell>
+        <game-cell square-number="3"></game-cell>
+        <game-cell square-number="4"></game-cell>
+        <game-cell square-number="5"></game-cell>
+        <game-cell square-number="6"></game-cell>
+        <game-cell square-number="7"></game-cell>
+        <game-cell square-number="8"></game-cell>
+    </div>
     <div ui-view></div>
+    <div></div>
 </div>
-
-
 
 
