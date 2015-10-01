@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="Tombola.NoughtAndCrosses">
+<html lang="en" ng-app="Tombola.NoughtAndCrosses" ng-controller="GameboardController as game">
 <head>
     <meta charset="UTF-8">
     <title>Noughts and Crosses</title>
     <script src="thirdparty/bower_components/angular/angular.min.js"></script>
     <script src="thirdparty/bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/{{game.css.cssStyle}}">
     <link rel="stylesheet" href="thirdparty/bower_components/animate.css/animate.min.css">
 </head>
-<body ng-controller="GameboardController as game">
+<body>
     <div class="mainContent">
         <div ui-view>
         </div>

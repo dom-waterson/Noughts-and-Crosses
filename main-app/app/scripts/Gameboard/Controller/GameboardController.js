@@ -1,10 +1,11 @@
 (function () {
     'use strict';
     angular.module('Tombola.NoughtAndCrosses.gameboard')
-    .controller('GameboardController',function ($scope, Proxy, playerToggle, GameModel, winStates){
+    .controller('GameboardController',function ($scope, Proxy, playerToggle, GameModel, winStates, cssToggle){
 
         this.gameModel = GameModel;
         this.players = playerToggle;
+        this.css = cssToggle;
 
         this.gameboardTapped = function (gridNumberFromTable) {
             if (GameModel.isSquareSelected(gridNumberFromTable) || GameModel.isGameInPlay()){
