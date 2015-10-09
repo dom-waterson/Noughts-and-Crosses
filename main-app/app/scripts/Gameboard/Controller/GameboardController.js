@@ -1,12 +1,13 @@
 (function () {
     'use strict';
     angular.module('Tombola.NoughtAndCrosses.gameboard')
-    .controller('GameboardController',function ($scope, Proxy, playerToggle, GameModel){
+    .controller('GameboardController',function ($scope, Proxy, playerToggle, gameModel, winStates){
 
-        this.gameModel = GameModel;
+        this.gameModel = gameModel;
+        this.players = playerToggle;
 
         this.gameboardTapped = function (gridNumberFromTable) {
-            if (GameModel.gameboard.charAt(gridNumberFromTable) !== '0' || GameModel.currentState === 'Win') {
+            if (gameModel.isSquareSelected(gridNumberFromTable) || gameModel.isGameInPlay()){
                 return;
             }
             makeMove(gridNumberFromTable);
@@ -15,26 +16,16 @@
         this.createGame = function () {
             Proxy.makeGame(playerToggle.player1, playerToggle.player2)
                 .then(function(data){
-                    GameModel.startNewGame(data.gameboard, data.outcome, data.winner);
-                })
-                .catch(function(data){
-                    alert("Error coming from create Game: " + data);
-                })
-                .finally(function(){
-                    console.log('finally end callback called after success on newGame');
+                    gameModel.startNewGame(data.gameboard, data.outcome, data.winner);
+                    winStates.checkStatusWithDelay();
                 });
         };
 
         var makeMove = function (gridIndex) {
-            Proxy.makeGameMove(GameModel.currentPlayer, gridIndex)
+            Proxy.makeGameMove(gameModel.currentPlayer, gridIndex)
                 .then(function(data){
-                    GameModel.makingMove(data.gameboard, data.outcome, data.winner);
-                })
-                .catch(function(data){
-                    alert("Error coming from makeMove: " + data);
-                })
-                .finally(function(){
-                    console.log('finally end callback called after success on makemove');
+                    gameModel.makingMove(data.gameboard, data.outcome, data.winner);
+                    winStates.checkStatusWithDelay();
                 });
         };
     });

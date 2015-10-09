@@ -1,3 +1,4 @@
+<h1>{{game.players.player1}} vs {{game.players.player2}}</h1>
 <table>
     <tr>
         <td><game-cell square-number="0"></game-cell></td>
@@ -15,8 +16,7 @@
         <td><game-cell square-number="8"></game-cell></td>
     </tr>
 </table>
-<button ui-sref="createGame">Select Players</button>
-<button ng-click="game.createGame()">Play again!</button>
+<div ui-view></div>
 
 
 
