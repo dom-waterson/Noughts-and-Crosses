@@ -1,42 +1,19 @@
 @background-color: #706b6b;
-@link-color: #7B906F;
-@link-lowlight-color: #7F7F7F;
 
 body {
   background-color: @background-color;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-a{
-  color: @link-color;
-  text-decoration: none;
-  a:hover {
-    color: @link-lowlight-color;
-  }
+.mainContent {
+  padding-top: 50px;
+  max-width: 500px;
+  margin: 0 auto ;
 }
 
 .select {
   display: inline-block;
-}
-
-//Styles for the table
-table tr td {
-  width: 105px;
-  height: 105px;
-}
-
-.cellSize {
-  width: 105px;
-  height: 105px;
-}
-
-.rowBorder {
-  border-top: 1px solid @link-color;
-  border-bottom: 1px solid @link-color;
-}
-
-.cellBorder {
-  border-left: 1px solid @link-color;
-  border-right: 1px solid @link-color;
+  margin-bottom: 10px;
 }
 
 //Styles for the image sprites
@@ -68,9 +45,43 @@ table tr td {
   width: 100px;
   height: 100px;
 }
-
 .player1 {
   background-position: -1px -548px;
   width: 100px;
   height: 100px;
 }
+
+.gameboard {
+  margin-left: 100px;
+  width: 300px;
+  height: 300px;
+}
+
+.gameCells {
+  width: 100px;
+  height: 100px;
+  outline: 1px solid;
+  float: left;
+}
+
+.centre {
+  text-align: center;
+}
+
+button {
+  background-color: #c7821a;
+  -moz-border-radius:25px;
+  -webkit-border-radius:25px;
+  border-radius:25px;
+  border:1px solid #ffffff;
+  display:inline-block;
+  color:#ffffff;
+  font-family:Arial;
+  font-size:15px;
+  padding: 10px 20px 10px 20px;
+  text-decoration:none;
+}
+button:hover {
+  background-color: #bfb598;
+}
+

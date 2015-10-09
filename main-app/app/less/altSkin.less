@@ -1,0 +1,51 @@
+body {
+  background-color: #fff;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.mainContent {
+  padding-top: 50px;
+  max-width: 500px;
+  margin: 0 auto ;
+}
+.select {
+  display: inline-block;
+  margin-bottom: 10px;
+}
+.player1, .human, .player2, .pre-trained, .random
+{ display: inline-block; background: url('../images/secondSprite.png') no-repeat; overflow: hidden; text-align: left; }
+
+.player1 { background-position: -0 -0; width: 100px; height: 100px; }
+.human { background-position: -100px -0; width: 100px; height: 100px; }
+.player2 { background-position: -0 -100px; width: 100px; height: 100px; }
+.pre-trained { background-position: -100px -100px; width: 100px; height: 100px; }
+.random { background-position: -0 -200px; width: 100px; height: 100px; }
+.gameboard {
+  margin-left: 100px;
+  width: 300px;
+  height: 300px;
+}
+.gameCells {
+  width: 100px;
+  height: 100px;
+  outline: 1px solid;
+  float: left;
+}
+.centre {
+  text-align: center;
+}
+button {
+  background-color: #c7821a;
+  -moz-border-radius: 25px;
+  -webkit-border-radius: 25px;
+  border-radius: 25px;
+  border: 1px solid #ffffff;
+  display: inline-block;
+  color: #ffffff;
+  font-family: Arial;
+  font-size: 15px;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+}
+button:hover {
+  background-color: #bfb598;
+}

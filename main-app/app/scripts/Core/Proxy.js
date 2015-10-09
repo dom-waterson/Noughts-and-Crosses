@@ -16,6 +16,7 @@
                     deferred.resolve(response.data);
                 }).catch( function(response) {
                     deferred.reject(response.data);
+                    console.log('Error coming from proxy:' + response);
                 });
 
             return deferred.promise;
