@@ -8,9 +8,6 @@
         this.css = cssToggle;
 
         this.gameboardTapped = function (gridNumberFromTable) {
-            //if (gameModel.isSquareSelected(gridNumberFromTable) || gameModel.isGameInPlay()){
-            //    return;
-            //}
             if(gameModel.canMakeMove(gridNumberFromTable)){
                 return;
             }
