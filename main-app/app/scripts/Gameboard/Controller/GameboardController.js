@@ -1,7 +1,7 @@
 (function () {
     'use strict';
     angular.module('Tombola.NoughtAndCrosses.gameboard')
-    .controller('GameboardController',function ($scope, $timeout, Proxy, playerToggle, gameModel, winStates, cssToggle){
+    .controller('GameboardController',['$scope', '$timeout', 'Proxy', 'playerToggle', 'gameModel', 'winStates', 'cssToggle', function ($scope, $timeout, Proxy, playerToggle, gameModel, winStates, cssToggle){
 
         this.gameModel = gameModel;
         this.players = playerToggle;
@@ -29,5 +29,5 @@
                     winStates.checkStatusWithDelay();
                 });
         };
-    });
+    }]);
 })();
