@@ -51,5 +51,13 @@
                     me.currentPlayer = '2';
                 }
             };
+
+            me.canMakeMove = function (squareNumber) {
+                if (me.isSquareSelected(squareNumber) || me.isGameInPlay()){
+                    return true;
+                }else {
+                    return false;
+                }
+            };
         }]);
 })();
