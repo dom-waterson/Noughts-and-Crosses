@@ -1,14 +1,14 @@
 (function () {
     'use strict';
     angular.module('Tombola.NoughtAndCrosses.WinStates')
-        .service('winStates',['$state', '$timeout', 'GameModel', function ($state, $timeout, GameModel) {
+        .service('winStates',['$state', '$timeout', 'gameModel', function ($state, $timeout, gameModel) {
             var me = this;
 
             var checkStates = function () {
-                if (GameModel.currentState === "Win"){
+                if (gameModel.currentState === "Win"){
                     $state.go('gameInProgress.win');
                 }
-                if (GameModel.currentState === "Draw"){
+                if (gameModel.currentState === "Draw"){
                     $state.go('gameInProgress.draw');
                 }
             };

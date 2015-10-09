@@ -1,7 +1,7 @@
 (function () {
     'use strict';
     angular.module('Tombola.Tombola.NoughtAndCrosses.GameState')
-        .service('GameModel',['playerToggle' , function (playerToggle) {
+        .service('gameModel',['playerToggle' , function (playerToggle) {
 
             var me = this;
 
