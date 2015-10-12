@@ -5,7 +5,7 @@
         beforeEach(function () {
             module('Tombola.NoughtAndCrosses.playerSelection');
             inject(function ($injector) {
-                constants = $injector.get('playerToggle')
+                constants = $injector.get('playerToggle');
             });
         });
 
@@ -31,5 +31,5 @@
             constants.togglePlayer(2);
             assert.equal('human', constants.player2);
         });
-    })
+    });
 })();

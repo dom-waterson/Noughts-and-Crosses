@@ -5,7 +5,7 @@
         beforeEach(function () {
             module('Tombola.NoughtAndCrosses.playerSelection');
             inject(function ($injector) {
-                constants = $injector.get('playerArray')
+                constants = $injector.get('playerArray');
             });
         });
 
@@ -20,5 +20,5 @@
         it('Ensures player type 2 is pre-trained', function () {
             assert.equal('pre-trained', constants[2]);
         });
-    })
+    });
 })();
