@@ -38,6 +38,20 @@
     "grunt-contrib-watch": "~0.6.1",
     "grunt-express-server": "~0.5.1",
     "express": "~4.13.3",
-    "morgan": "~1.6.1"
+    "morgan": "~1.6.1",
+    "karma": "~0.13.10",
+    "grunt-karma": "~0.12.1",
+    "grunt-mocha": "~0.4.13",
+    "mocha": "~2.3.3",
+    "karma-mocha": "~0.2.0",
+    "karma-chai-plugins": "~0.6.0",
+    "sinon-chai": "~2.8.0",
+    "chai": "~3.3.0",
+    "sinon": "~1.17.1",
+    "karma-chai-sinon": "~0.1.5",
+    "karma-nyan-reporter": "~0.2.2",
+    "phantomjs": "~1.9.18",
+    "karma-phantomjs-launcher": "~0.2.1",
+    "karma-chrome-launcher": "~0.2.1"
   }
 }
