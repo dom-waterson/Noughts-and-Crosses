@@ -10,26 +10,26 @@
         });
 
         it('Ensures default players 1 and 2 are human', function () {
-            should.equal('human', constants.player1);
-            should.equal('human', constants.player2);
+            constants.player1.should.equal('human');
+            constants.player2.should.equal('human');
         });
 
         it('Ensures toggling of player 1 works', function () {
             constants.togglePlayer(1);
-            should.equal('random', constants.player1);
+            constants.player1.should.equal('random');
             constants.togglePlayer(1);
-            should.equal('pre-trained', constants.player1);
+            constants.player1.should.equal('pre-trained');
             constants.togglePlayer(1);
-            should.equal('human', constants.player1);
+            constants.player1.should.equal('human');
         });
 
         it('Ensures toggling of player 2 works', function () {
             constants.togglePlayer(2);
-            should.equal('random', constants.player2);
+            constants.player2.should.equal('random');
             constants.togglePlayer(2);
-            should.equal('pre-trained', constants.player2);
+            constants.player2.should.equal('pre-trained');
             constants.togglePlayer(2);
-            should.equal('human', constants.player2);
+            constants.player2.should.equal('human');
         });
     });
 })();

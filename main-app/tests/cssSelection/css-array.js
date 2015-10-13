@@ -10,11 +10,11 @@
         });
 
         it('Ensures css in index 0 is main.css', function () {
-            should.equal('main.css', constants[0]);
+            constants[0].should.equal('main.css');
         });
 
         it('Ensures css in index 1 is altSkin.css', function () {
-            should.equal('altSkin.css', constants[1]);
+            constants[1].should.equal('altSkin.css');
         });
     });
 })();

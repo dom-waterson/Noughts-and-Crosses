@@ -10,18 +10,18 @@
         });
 
         it('Ensures the default css is main.css', function () {
-            should.equal('main.css', constants.cssStyle);
+            constants.cssStyle.should.equal('main.css');
         });
 
         it('Ensures that toggling the css will result in altSkin.css', function () {
             constants.toggleCss();
-            should.equal('altSkin.css', constants.cssStyle);
+            constants.cssStyle.should.equal('altSkin.css');
         });
 
         it('Ensures that toggling two times will put the css back to main.css', function () {
             constants.toggleCss();
             constants.toggleCss();
-            should.equal('main.css', constants.cssStyle);
+            constants.cssStyle.should.equal('main.css');
         });
     });
 })();
