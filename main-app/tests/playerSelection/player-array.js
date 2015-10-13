@@ -10,15 +10,15 @@
         });
 
         it('Ensures player type 0 is human', function () {
-            assert.equal('human', constants[0]);
+            should.equal('human', constants[0]);
         });
 
         it('Ensures player type 1 is random', function () {
-            assert.equal('random', constants[1]);
+            should.equal('random', constants[1]);
         });
 
         it('Ensures player type 2 is pre-trained', function () {
-            assert.equal('pre-trained', constants[2]);
+            should.equal('pre-trained', constants[2]);
         });
     });
 })();
