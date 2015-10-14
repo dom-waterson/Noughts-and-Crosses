@@ -46,9 +46,11 @@
             };
 
             var startCurrentPlayer = function () {
-                me.currentPlayer = '1';
                 if (playerToggle.player1 !== "human"){
                     me.currentPlayer = '2';
+                }
+                else {
+                    me.currentPlayer = '1';
                 }
             };
 
