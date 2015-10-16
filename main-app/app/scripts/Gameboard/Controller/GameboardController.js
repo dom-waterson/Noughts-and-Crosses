@@ -1,7 +1,7 @@
 (function () {
     'use strict';
     angular.module('Tombola.NoughtAndCrosses.gameboard')
-    .controller('GameboardController',['$scope', '$timeout', 'Proxy', 'playerToggle', 'gameModel', 'winStates', 'cssToggle', function ($scope, $timeout, Proxy, playerToggle, gameModel, winStates, cssToggle){
+    .controller('GameboardController',['Proxy', 'playerToggle', 'gameModel', 'winStates', 'cssToggle', function (Proxy, playerToggle, gameModel, winStates, cssToggle){
 
         this.gameModel = gameModel;
         this.players = playerToggle;
