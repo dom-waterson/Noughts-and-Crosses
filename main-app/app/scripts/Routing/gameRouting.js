@@ -19,6 +19,7 @@
                 })
                 .state ('gameInProgress', {
                     url: "/playingGame",
+                    //These are left in for testing purposes
                     //templateUrl: "html/views/gameboard.html"
                     template:'<div class="centre "> ' +
                     '<h1 class="centre animated slideInLeft">{{game.players.player1 | uppercase}} vs {{game.players.player2 | uppercase}}</h1> ' +
@@ -40,6 +41,7 @@
                  })
                 .state ('gameInProgress.draw', {
                     url: '/gameDrawn',
+                    //These are left in for testing purposes
                     //templateUrl: 'html/views/drawView.html',
                     template : '<div class="animated bounceInUp"><h1>Its a draw!</h1></div>',
                     onEnter: function($timeout, $state){
@@ -48,6 +50,7 @@
                 })
                 .state ('gameInProgress.win', {
                     url: '/gameWon',
+                    //These are left in for testing purposes
                     //templateUrl: 'html/views/winView.html',
                     template: '<div class="animated bounceInUp"><h1>Player: {{game.gameModel.winner}} has won!</h1></div>',
                     onEnter: function($timeout, $state){
