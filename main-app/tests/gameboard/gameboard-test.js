@@ -18,7 +18,6 @@
         it('Ensures when game board is tapped depending on selection the make move function is called', function () {
             var deferred = $q.defer();
             var gameModelMoveSpy = sinon.sandbox.spy(mocks.gameModel, 'canMakeMove');
-            //var gameModelMakingMoveSpy = sinon.sandbox.spy(mocks.gameModel, 'makingMove');
             var proxyMakeMoveSpy = sinon.sandbox.stub(mocks.proxy, 'makeGameMove', function(){
                 return deferred.promise;
             });
@@ -27,7 +26,6 @@
             deferred.resolve(returnedPromiseData);
             gameModelMoveSpy.should.have.been.calledOnce;
             proxyMakeMoveSpy.should.have.been.calledOnce;
-            //gameModelMakingMoveSpy.should.have.been.calledOnce;
         });
 
         it('Ensures when game board is tapped and the selection is not valid, the function make move is not called', function () {
