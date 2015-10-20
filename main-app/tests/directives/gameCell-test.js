@@ -23,9 +23,8 @@
             element[0].toString().should.be.equal('[object HTMLElement]');
             element.attr('square-number').should.be.equal('4');
             element[0].children.length.should.be.equal(1);
-
-            element.triggerHandler('click');
-            //assert(something);
+            //element.attr('class').should.be.equal('gameCells player');
+            element.should.have.class('gameCells');
         });
 
         afterEach(function () {
