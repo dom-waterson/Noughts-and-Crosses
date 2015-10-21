@@ -20,11 +20,15 @@
 
             mock = {
                 game : {
-                    gameboardTapped : function (number) {}
+                    gameboardTapped : function (number) {},
+                    gameModel: {
+                        gameboard : "000010000"
+                    }
                 }
             };
 
             directiveElement = '<game-cell square-number="4"></game-cell>';
+            rootScope.game = mock.game;
             element = compile(directiveElement)(rootScope);
             rootScope.$digest();
             insideElement = element.find('div');
@@ -38,7 +42,7 @@
         });
 
         it('Ensures game-cell directives has the correct class', function () {
-            insideElement.attr('class').should.be.equal('gameCells player');
+            insideElement.attr('class').should.be.equal('gameCells player1');
         });
 
         it('Ensures game-cell directives has the correct square number attribute', function () {
@@ -50,7 +54,6 @@
         });
 
         it('Ensures game-cell directives fires the gameboardTapped function once', function () {
-            rootScope.game = mock.game;
             insideElement.triggerHandler('click');
             spyTappedFunction.should.have.been.calledOnce.calledWithExactly(4);
         });
