@@ -22,9 +22,9 @@
                 return deferred.promise;
             });
             var gameboardController = $controller('GameboardController', {gameModel : mocks.gameModel, Proxy : mocks.proxy});
-            gameboardController.gameboardTapped();
+            gameboardController.gameboardTapped(4);
             deferred.resolve(returnedPromiseData);
-            gameModelMoveSpy.should.have.been.calledOnce;
+            gameModelMoveSpy.should.have.been.calledOnce.calledWithExactly(4);
             proxyMakeMoveSpy.should.have.been.calledOnce;
         });
 
@@ -34,7 +34,7 @@
             });
             var gameModelMoveSpy = sinon.sandbox.spy(mocks.proxy, 'makeGameMove');
             var gameboardController = $controller('GameboardController', {gameModel : mocks.gameModel, Proxy : mocks.proxy});
-            gameboardController.gameboardTapped();
+            gameboardController.gameboardTapped(4);
             gameModelMoveSpy.should.neverCalled;
         });
 
