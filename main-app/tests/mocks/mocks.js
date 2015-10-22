@@ -20,7 +20,13 @@
     },
     winStates : {
         checkStatusWithDelay : function () {}
-    }
+    },
+     game : {
+         gameboardTapped : function (number) {},
+         gameModel: {
+             gameboard : "000010000"
+         }
+     }
 };
 
 
