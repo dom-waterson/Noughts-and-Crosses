@@ -6,6 +6,8 @@
             gameModel,
             timeout;
 
+        beforeEach(module('htmlViews'));
+
         beforeEach(function () {
             module('Tombola.NoughtAndCrosses');
             module('Tombola.NoughtAndCrosses.WinStates');

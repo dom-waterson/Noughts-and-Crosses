@@ -5,6 +5,8 @@
             $state,
             $timeout;
 
+        beforeEach(module('htmlViews'));
+
         beforeEach(function () {
             module('Tombola.NoughtAndCrosses');
             inject(function ($injector, _$state_, _$timeout_, _$rootScope_) {
