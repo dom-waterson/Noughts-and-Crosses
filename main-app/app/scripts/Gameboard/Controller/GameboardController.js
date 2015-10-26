@@ -7,7 +7,6 @@
         this.players = playerToggle;
         this.css = cssToggle;
         me.soundTimes = soundConstants;
-            me.soundService = soundService;
 
         this.gameboardTapped = function (gridNumberFromTable) {
             if(gameModel.canMakeMove(gridNumberFromTable)){
@@ -21,6 +20,7 @@
                 .then(function(data){
                     gameModel.startNewGame(data.gameboard, data.outcome, data.winner);
                     winStates.checkStatusWithDelay();
+                    soundService.playSound(me.soundTimes.SOUND_EVIL_START, me.soundTimes.SOUND_EVIL_DURATION);
                 });
         };
 
@@ -29,7 +29,7 @@
                 .then(function(data){
                     gameModel.makingMove(data.gameboard, data.outcome, data.winner);
                     winStates.checkStatusWithDelay();
-                    me.soundService.playSound(me.soundTimes.SOUND_LIGHTSABER_START, me.soundTimes.SOUND_LIGHTSABER_DURATION);
+                    soundService.playSound(me.soundTimes.SOUND_LIGHTSABER_START, me.soundTimes.SOUND_LIGHTSABER_DURATION);
                 });
         };
     }]);

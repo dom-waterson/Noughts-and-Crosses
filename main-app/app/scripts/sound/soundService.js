@@ -15,8 +15,10 @@
             me.playSound = function (start, length) {
                 if(!me.playing) {
                     audio = angular.element('#sound');
+                    console.log(audio[0]);
                     audio.prop('currentTime', start);
                     audio.get(0).play();
+                    console.log("playing");
                     me.playing = true;
                     $timeout(stopSound, length, true);
                 }
