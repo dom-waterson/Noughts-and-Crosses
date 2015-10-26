@@ -1,7 +1,7 @@
 (function () {
     'use strict';
     angular.module('Tombola.NoughtAndCrosses')
-        .config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $urlRouterProvider){
+        .config(['$stateProvider', '$urlRouterProvider',function ($stateProvider, $urlRouterProvider){
             var resetGame = function($timeout, $state){
                 $timeout(function(){
                     $state.go('createGame');
@@ -11,27 +11,36 @@
             $stateProvider
                 .state('createGame', {
                     url: "/selectPlayers",
-                    templateUrl: "html/views/playerselection.html"
+                    templateProvider: function ($templateCache) {
+                        return $templateCache.get('playerselection.html');
+                    }
                 })
                 .state('createGame.rules', {
                     url: "/rules",
-                    templateUrl: "html/views/rules.html"
+                    templateProvider: function ($templateCache) {
+                        return $templateCache.get('rules.html');
+                    }
                 })
                 .state ('gameInProgress', {
                     url: "/playingGame",
-                    //These are left in for testing purposes
-                    templateUrl: "html/views/gameboard.html"
+                    templateProvider: function ($templateCache) {
+                        return $templateCache.get('gameboard.html');
+                    }
                  })
                 .state ('gameInProgress.draw', {
                     url: '/gameDrawn',
-                    templateUrl: 'html/views/drawView.html',
+                    templateProvider: function ($templateCache) {
+                        return $templateCache.get('drawView.html');
+                    },
                     onEnter: function($timeout, $state){
                         resetGame($timeout, $state);
                     }
                 })
                 .state ('gameInProgress.win', {
                     url: '/gameWon',
-                    templateUrl: 'html/views/winView.html',
+                    templateProvider: function ($templateCache) {
+                        return $templateCache.get('winView.html');
+                    },
                     onEnter: function($timeout, $state){
                         resetGame($timeout, $state);
                     }
