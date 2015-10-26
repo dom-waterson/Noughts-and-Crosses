@@ -21,6 +21,9 @@
         it('Ensures the default state is correct', function () {
             $state.current.url.should.equal('/selectPlayers');
             $state.current.templateUrl.should.equal('html/views/playerselection.html');
+            //var state = $state.get('createGame');
+            //should.exist(state);
+            //state.url.should.equal('/selectPlayers');
         });
 
         it('Ensures the default state is correct when user wants to see the rules', function () {
