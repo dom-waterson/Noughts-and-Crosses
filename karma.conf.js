@@ -25,6 +25,12 @@ module.exports = function(config) {
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
+      'main-app/app/html/**/*.html' : ['ng-html2js']
+    },
+
+    ngHtml2JsPreprocessor: {
+      stripPrefix: 'main-app/app/',
+      moduleName: 'htmlViews'
     },
 
 
