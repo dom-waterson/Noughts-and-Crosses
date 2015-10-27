@@ -1,5 +1,6 @@
 (function () {
     'use strict';
+    /*jshint expr: true*/
     describe('Testing player selection controller', function () {
         var $controller,
             playerController;
@@ -20,5 +21,5 @@
             playerController.playerToggle.should.be.equal(mocks.playerToggle);
             playerController.playerToggle.togglePlayer.should.exist;
         });
-    })
+    });
 })();
