@@ -26,6 +26,9 @@
          gameModel: {
              gameboard : "000010000"
          }
+     },
+     playerToggle : {
+         togglePlayer : function () {}
      }
 };
 
