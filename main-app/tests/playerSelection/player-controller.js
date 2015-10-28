@@ -1,6 +1,5 @@
 (function () {
     'use strict';
-    /*jshint expr: true*/
     describe('Testing player selection controller', function () {
         var $controller,
             playerController;

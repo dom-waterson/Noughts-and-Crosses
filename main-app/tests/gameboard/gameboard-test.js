@@ -1,6 +1,5 @@
 (function () {
     'use strict';
-    /*jshint expr: true*/
     describe('Testing css-toggle', function () {
         var $controller,
             sandbox,
