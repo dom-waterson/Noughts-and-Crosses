@@ -13,7 +13,6 @@
                 audio = document.getElementById("sound");
                 audio.currentTime = start;
                 audio.play();
-                console.log(audio.duration);
                 $timeout(stopSound, length, true);
             };
         }]);
